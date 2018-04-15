@@ -2,56 +2,58 @@
 
 namespace StatePattern
 {
-interface IWritingState {
-
-  void Write(string words);
-
-}
-
-class UpperCase : IWritingState
-{
-  public void Write(string words)
+  interface IWritingState
   {
-    Console.WriteLine(words.ToUpper());
-  }
-}
 
-class LowerCase : IWritingState
-{
-  public void Write(string words)
-  {
-    Console.WriteLine(words.ToLower());
-  }
-}
+    void Write(string words);
 
-class DefaultText : IWritingState
-{
-  public void Write(string words)
-  {
-    Console.WriteLine(words);
-  }
-}
-
-class TextEditor {
-
-  private IWritingState mState;
-
-  public TextEditor()
-  {
-    mState = new DefaultText();
   }
 
-  public void SetState(IWritingState state)
+  class UpperCase : IWritingState
   {
-    mState = state;
+    public void Write(string words)
+    {
+      Console.WriteLine(words.ToUpper());
+    }
   }
 
-  public void Type(string words)
+  class LowerCase : IWritingState
   {
-    mState.Write(words);
+    public void Write(string words)
+    {
+      Console.WriteLine(words.ToLower());
+    }
   }
 
-}
+  class DefaultText : IWritingState
+  {
+    public void Write(string words)
+    {
+      Console.WriteLine(words);
+    }
+  }
+
+  class TextEditor
+  {
+
+    private IWritingState mState;
+
+    public TextEditor()
+    {
+      mState = new DefaultText();
+    }
+
+    public void SetState(IWritingState state)
+    {
+      mState = state;
+    }
+
+    public void Type(string words)
+    {
+      mState.Write(words);
+    }
+
+  }
 
   class Program
   {
