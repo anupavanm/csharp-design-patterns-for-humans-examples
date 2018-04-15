@@ -19,21 +19,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BridgePattern", "BridgePatt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompositePattern", "CompositePattern\CompositePattern.csproj", "{3CFAA453-5386-4A9E-9DDA-20A0DC8F700D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacadePattern", "FacadePattern\FacadePattern.csproj", "{8E91875D-E79F-4D16-9FFC-49BD5BE7DF03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FacadePattern", "FacadePattern\FacadePattern.csproj", "{8E91875D-E79F-4D16-9FFC-49BD5BE7DF03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecoratorPattern", "DecoratorPattern\DecoratorPattern.csproj", "{E16867D5-A235-437D-ADBF-8A4418E7038B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DecoratorPattern", "DecoratorPattern\DecoratorPattern.csproj", "{E16867D5-A235-437D-ADBF-8A4418E7038B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlyweightPattern", "FlyweightPattern\FlyweightPattern.csproj", "{FB1E171E-9C39-4EF1-9377-9786AF3C61DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlyweightPattern", "FlyweightPattern\FlyweightPattern.csproj", "{FB1E171E-9C39-4EF1-9377-9786AF3C61DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxyPattern", "ProxyPattern\ProxyPattern.csproj", "{CE4E3751-C4D9-440E-9E25-3E7EA61F4A7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProxyPattern", "ProxyPattern\ProxyPattern.csproj", "{CE4E3751-C4D9-440E-9E25-3E7EA61F4A7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainOfResponsibilityPattern", "ChainOfResponsibilityPattern\ChainOfResponsibilityPattern.csproj", "{E94F9FB8-B495-4A85-BAB4-0B08C69BA2D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChainOfResponsibilityPattern", "ChainOfResponsibilityPattern\ChainOfResponsibilityPattern.csproj", "{E94F9FB8-B495-4A85-BAB4-0B08C69BA2D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandPattern", "CommandPattern\CommandPattern.csproj", "{25E92DA1-1205-4D53-85F4-B77BC92DCF5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandPattern", "CommandPattern\CommandPattern.csproj", "{25E92DA1-1205-4D53-85F4-B77BC92DCF5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IteratorPattern", "IteratorPattern\IteratorPattern.csproj", "{BB1AE146-315A-44F8-A90B-77E386C65678}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IteratorPattern", "IteratorPattern\IteratorPattern.csproj", "{BB1AE146-315A-44F8-A90B-77E386C65678}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatorPattern", "MediatorPattern\MediatorPattern.csproj", "{A6278444-3DDF-4175-996C-361E536668FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediatorPattern", "MediatorPattern\MediatorPattern.csproj", "{A6278444-3DDF-4175-996C-361E536668FC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MementoPattern", "Memento\MementoPattern.csproj", "{93F0318A-696F-4C09-800F-7091BAEC2178}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +107,10 @@ Global
 		{A6278444-3DDF-4175-996C-361E536668FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6278444-3DDF-4175-996C-361E536668FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6278444-3DDF-4175-996C-361E536668FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93F0318A-696F-4C09-800F-7091BAEC2178}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93F0318A-696F-4C09-800F-7091BAEC2178}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93F0318A-696F-4C09-800F-7091BAEC2178}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93F0318A-696F-4C09-800F-7091BAEC2178}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
