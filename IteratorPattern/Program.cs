@@ -5,103 +5,83 @@ using System.Linq;
 
 namespace IteratorPattern
 {
-class RadioStation
-{
-  private float mFrequency;
-
-  public RadioStation(float frequency)
+  class RadioStation
   {
-    mFrequency = frequency;
-  }
+    private float mFrequency;
 
-  public float GetFrequecy()
-  {
-    return mFrequency;
-  }
-
-}
-
-class StationList : IEnumerable
-{
-  private List<RadioStation> mStations;
-
-  public StationList()
-  {
-    mStations = new List<RadioStation>();
-  }
-
-  public void AddStation(RadioStation station)
-  {
-    mStations.Add(station);
-  }
-
-  public void RemoveStation(RadioStation station)
-  {
-    mStations.Remove(station);
-  }
-
-  public IEnumerator GetEnumerator()
-  {
-    return new StationIterator(mStations);
-  }
-}
-
-class StationIterator : IEnumerator
-{
-  private List<RadioStation> mStations;
-  private int currentPosition = -1;
-
-  public object Current
-  {
-    get
+    public RadioStation(float frequency)
     {
-      return mStations[currentPosition];
+      mFrequency = frequency;
+    }
+
+    public float GetFrequecy()
+    {
+      return mFrequency;
+    }
+
+  }
+
+  class StationList : IEnumerable<RadioStation>
+  {
+    List<RadioStation> mStations = new List<RadioStation>();
+
+    public RadioStation this[int index]
+    {
+      get { return mStations[index]; }
+      set { mStations.Insert(index, value); }
+    }
+
+    public void Add(RadioStation station)
+    {
+      mStations.Add(station);
+    }
+
+    public void Remove(RadioStation station)
+    {
+      mStations.Remove(station);
+    }
+
+    public IEnumerator<RadioStation> GetEnumerator()
+    {
+      return mStations.GetEnumerator();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+      //Use can switch to this internal collection if you do not want to transform
+      //return this.GetEnumerator();
+
+      //use this if you want to transform the object before rendering
+      foreach (var x in mStations)
+      {
+        yield return x;
+      }
     }
   }
 
-  public StationIterator(List<RadioStation> stations)
+  class Program
   {
-    mStations = stations;
-  }
-  public bool MoveNext()
-  {
-    if(currentPosition < mStations.Count - 1)
+    static void Main(string[] args)
     {
-      currentPosition = currentPosition + 1;
-      return true;
+      var stations = new StationList();
+      var station1 = new RadioStation(89);
+      stations.Add(station1);
+
+      var station2 = new RadioStation(101);
+      stations.Add(station2);
+
+      var station3 = new RadioStation(102);
+      stations.Add(station3);
+
+      foreach (var x in stations)
+      {
+        Console.Write(x.GetFrequecy());
+      }
+
+      var q = stations.Where(x => x.GetFrequecy() == 89).FirstOrDefault();
+      Console.WriteLine(q.GetFrequecy());
+
+      Console.ReadLine();
     }
-
-    return false;
   }
-
-  public void Reset()
-  {
-    currentPosition = -1;
-  }
-}
-
-class Program
-{
-  static void Main(string[] args)
-  {
-    var stations = new StationList();
-    var station1 = new RadioStation(89);
-    stations.AddStation(station1);
-
-    var station2 = new RadioStation(101);
-    stations.AddStation(station2);
-
-    var station3 = new RadioStation(102);
-    stations.AddStation(station3);
-
-    foreach(RadioStation station in stations)
-    {
-      Console.WriteLine(station.GetFrequecy());
-    }
-
-    stations.RemoveStation(station2); // Will Remove station 101
-
-    Console.ReadLine();
-  }
-}
 }
