@@ -43,19 +43,19 @@ namespace IteratorPattern
 
     public IEnumerator<RadioStation> GetEnumerator()
     {
-      return mStations.GetEnumerator();
+      return this.GetEnumerator();
     }
 
     IEnumerator IEnumerable.GetEnumerator()
     {
       //Use can switch to this internal collection if you do not want to transform
-      //return this.GetEnumerator();
+      return mStations.GetEnumerator();
 
       //use this if you want to transform the object before rendering
-      foreach (var x in mStations)
-      {
-        yield return x;
-      }
+      //foreach (var x in mStations)
+      //{
+      //  yield return x;
+      //}
     }
   }
 
